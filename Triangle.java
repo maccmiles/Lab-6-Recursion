@@ -13,7 +13,7 @@ public class Triangle {
 	System.out.println("Enter a positive integer: ");
 	i = input.nextInt();
 	} while (i <= 0);
-	recursiveTriangle(i);//print triangle0
+	recursiveTriangle(i);//print triangle
 }
 	public static String iterativeTriangle(int n) {//build triangle
 		String Triangle = "";//set string
@@ -28,7 +28,14 @@ public class Triangle {
 		return Triangle;
 	}
 	public static void recursiveTriangle(int n) {//print Triangle
-		System.out.println(iterativeTriangle(n));
+		String Triangle = "";//set string
+		int row = n;//set working row
+		if (n == 0) {System.exit(0);}//break if 0
+		for (int i=0; i<row; i++) {
+			Triangle = Triangle + "*";//create row of triangle
+		}
+		System.out.println(Triangle);//print triangle
+		recursiveTriangle(n-1);//get next row
 	}
 }
 
